@@ -51,10 +51,11 @@ function BlogCard({
         </h4>
         <div className="text-muted">{description}</div>
         <div className="d-flex align-items-center pt-5 mt-auto">
+          { avatarImgSrc ? 
           <div
             className="avatar avatar-md mr-3"
             style={{ backgroundImage: `url(${avatarImgSrc}` }}
-          />
+          /> : null}
           <div>
             <a href={profileHref} className="text-default">
               {authorName}
@@ -84,10 +85,11 @@ function BlogCard({
         </h4>
         <div className="text-muted">{description}</div>
         <div className="d-flex align-items-center pt-5 mt-auto">
+          { avatarImgSrc ? 
           <div
             className="avatar avatar-md mr-3"
             style={{ backgroundImage: `url(${avatarImgSrc}` }}
-          />
+          /> : null}
           <div>
             <a href={profileHref} className="text-default">
               {authorName}
