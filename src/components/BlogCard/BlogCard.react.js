@@ -21,6 +21,7 @@ type Props = {|
   +aside?: boolean,
   +postHref?: string,
   +profileHref?: string,
+  +iconPrefix?: string,
 |};
 
 function BlogCard({
@@ -39,6 +40,7 @@ function BlogCard({
   iconHref,
   postHref,
   profileHref,
+  iconPrefix = "",
 }: Props): React.Node {
   return !aside ? (
     <Card>
@@ -64,7 +66,7 @@ function BlogCard({
           </div>
           <div className="ml-auto text-muted">
             <a href={iconHref} className="icon d-none d-md-inline-block ml-3">
-              <Icon prefix="fe" name={iconName || "heart"} />
+              <Icon prefix={iconPrefix || "fe"} name={iconName || "heart"} />
             </a>
           </div>
         </div>
@@ -98,7 +100,7 @@ function BlogCard({
           </div>
           <div className="ml-auto text-red">
             <a href={iconHref} className="icon d-none d-md-inline-block ml-3">
-              <Icon prefix="fe" name={iconName || "heart"} />
+                <Icon prefix={iconPrefix || "fe"} name={iconName || "heart"} />
             </a>
           </div>
         </div>

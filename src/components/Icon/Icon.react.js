@@ -56,7 +56,7 @@ function Icon({
   const prefix = (payment && "payment") || (flag && "flag") || prefixFromProps;
   const classes = cn(
     {
-      [prefix]: true,
+      [prefix]: prefix == "fe" ? true : false,
       [`${prefix}-${name}`]: true,
     },
     className
