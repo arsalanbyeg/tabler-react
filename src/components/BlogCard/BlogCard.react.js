@@ -3,6 +3,7 @@
 import * as React from "react";
 import Card from "../Card/Card.react";
 import Icon from "../Icon/Icon.react";
+import moment from "moment";
 
 type Props = {|
   +children?: React.Node,
@@ -62,7 +63,7 @@ function BlogCard({
             <a href={profileHref} className="text-default">
               {authorName}
             </a>
-            <small className="d-block text-muted">{date}</small>
+            <small className="d-block text-muted">{moment(date, "X").fromNow()}</small>
           </div>
           <div className="ml-auto text-muted">
             <a href={iconHref} className="icon d-none d-md-inline-block ml-3">
@@ -96,7 +97,7 @@ function BlogCard({
             <a href={profileHref} className="text-default">
               {authorName}
             </a>
-            <small className="d-block text-muted">{date}</small>
+            <small className="d-block text-muted">{moment(date, "X").fromNow()}</small>
           </div>
           <div className="ml-auto text-red">
             <a href={iconHref} className="icon d-none d-md-inline-block ml-3">
