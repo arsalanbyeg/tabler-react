@@ -45,12 +45,12 @@ function BlogCard({
 }: Props): React.Node {
   return !aside ? (
     <Card>
-      <a href={postHref}>
+      <span onClick={postHref}>
         <img className="card-img-top" src={imgSrc} alt={imgAlt} />
-      </a>
+      </span>
       <Card.Body className="d-flex flex-column">
         <h4>
-          <a href={postHref}>{title}</a>
+          <span className="pointer" onClick={postHref}>{title}</span>
         </h4>
         <div className="text-muted">{description}</div>
         <div className="d-flex align-items-center pt-5 mt-auto">
@@ -60,31 +60,31 @@ function BlogCard({
             style={{ backgroundImage: `url(${avatarImgSrc}` }}
           /> : null}
           <div>
-            <a href={profileHref} className="text-default">
+            <span onClick={profileHref} className="text-default pointer">
               {authorName}
-            </a>
+            </span>
             <small className="d-block text-muted">{moment(date, "X").fromNow()}</small>
           </div>
           <div className="ml-auto text-muted">
-            <a href={iconHref} className="icon d-none d-md-inline-block ml-3">
+            <span onClick={iconHref} className="icon d-none d-md-inline-block ml-3 pointer">
               <Icon prefix={iconPrefix || "fe"} name={iconName || "heart"} />
-            </a>
+            </span>
           </div>
         </div>
       </Card.Body>
     </Card>
   ) : (
     <Card className="card-aside">
-      <a
-        href={postHref}
-        className="card-aside-column"
+      <span
+        onClick={postHref}
+        className="card-aside-column pointer"
         style={{ backgroundImage: `url(${imgSrc})` }}
       >
         {""}
-      </a>
+      </span>
       <Card.Body className="d-flex flex-column">
         <h4>
-          <a href={postHref}>{title}</a>
+          <span className="pointer" onClick={postHref}>{title}</span>
         </h4>
         <div className="text-muted">{description}</div>
         <div className="d-flex align-items-center pt-5 mt-auto">
@@ -94,15 +94,15 @@ function BlogCard({
             style={{ backgroundImage: `url(${avatarImgSrc}` }}
           /> : null}
           <div>
-            <a href={profileHref} className="text-default">
+            <span onClick={profileHref} className="text-default pointer">
               {authorName}
-            </a>
+            </span>
             <small className="d-block text-muted">{moment(date, "X").fromNow()}</small>
           </div>
           <div className="ml-auto text-red">
-            <a href={iconHref} className="icon d-none d-md-inline-block ml-3">
+            <span onClick={iconHref} className="icon d-none d-md-inline-block ml-3 pointer">
                 <Icon prefix={iconPrefix || "fe"} name={iconName || "heart"} />
-            </a>
+            </span>
           </div>
         </div>
       </Card.Body>
