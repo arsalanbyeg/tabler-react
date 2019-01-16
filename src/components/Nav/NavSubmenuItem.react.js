@@ -9,6 +9,7 @@ type Props = {|
   +RootComponent?: React.ElementType,
   +active?: boolean,
   +icon?: string,
+  +iconPrefix?: string,
   +to?: string,
 |};
 
@@ -16,6 +17,7 @@ function NavSubmenuItem({
   className,
   RootComponent,
   icon,
+  iconPrefix,
   children,
   active = false,
   to,
@@ -26,7 +28,7 @@ function NavSubmenuItem({
     <Component className={classes} to={to}>
       {icon && (
         <React.Fragment>
-          <Icon name={icon} />{" "}
+          <Icon prefix={iconPrefix} name={icon} />{" "}
         </React.Fragment>
       )}
       {children}

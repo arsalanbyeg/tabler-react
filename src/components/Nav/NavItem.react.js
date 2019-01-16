@@ -16,6 +16,7 @@ type Props = {|
   +href?: string,
   +to?: string,
   +icon?: string,
+  +iconPrefix?: string,
   +type?: "li" | "div",
   /**
    * Make this item behave like it has a subNav even if you dont use subItems or subItemsObjects
@@ -68,6 +69,7 @@ class NavItem extends React.Component<Props, State> {
       to,
       type = "li",
       icon,
+      iconPrefix,
       hasSubNav: forcedHasSubNav,
       active,
       subItems,
@@ -86,6 +88,7 @@ class NavItem extends React.Component<Props, State> {
               className={className}
               to={to}
               icon={icon}
+              iconPrefix={iconPrefix}
               RootComponent={LinkComponent}
               hasSubNav={hasSubNav}
               active={active}
@@ -101,6 +104,7 @@ class NavItem extends React.Component<Props, State> {
           className={className}
           to={to}
           icon={icon}
+          iconPrefix={iconPrefix}
           RootComponent={LinkComponent}
           hasSubNav={hasSubNav}
           active={active}
@@ -124,6 +128,7 @@ class NavItem extends React.Component<Props, State> {
                     value={a.value}
                     to={a.to}
                     icon={a.icon}
+                    iconPrefix={a.iconPrefix}
                     LinkComponent={a.LinkComponent}
                   />
                 ))) ||

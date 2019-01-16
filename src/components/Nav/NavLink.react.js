@@ -9,6 +9,7 @@ type Props = {|
   +RootComponent?: React.ElementType,
   +active?: boolean,
   +icon?: string,
+  +iconPrefix?: string,
   +to?: string,
   +hasSubNav?: boolean,
   +rootRef?: (?HTMLElement) => void,
@@ -20,6 +21,7 @@ function NavLink({
   className,
   RootComponent,
   icon,
+  iconPrefix,
   active = false,
   to,
   hasSubNav,
@@ -32,7 +34,7 @@ function NavLink({
     <React.Fragment>
       {icon && (
         <React.Fragment>
-          <Icon name={icon} />{" "}
+          <Icon prefix={iconPrefix} name={icon} />{" "}
         </React.Fragment>
       )}
       {children}

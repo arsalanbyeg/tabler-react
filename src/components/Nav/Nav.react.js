@@ -12,6 +12,7 @@ export type subNavItem = {|
   +value: string,
   +to?: string,
   +icon?: string,
+  +iconPrefix?: string,
   +LinkComponent?: React.ElementType,
 |};
 
@@ -19,6 +20,7 @@ type navItem = {|
   +value: string,
   +to?: string,
   +icon?: string,
+  +iconPrefix?: string,
   +active?: boolean,
   +LinkComponent?: React.ElementType,
   +subItems?: Array<subNavItem>,
@@ -118,6 +120,7 @@ class Nav extends React.Component<Props, State> {
                 <Nav.Item
                   key={i}
                   icon={a.icon}
+                  iconPrefix={a.iconPrefix}
                   value={a.value}
                   to={a.to}
                   hasSubNav={!!a.subItems}
